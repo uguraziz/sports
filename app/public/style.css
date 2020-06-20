@@ -150,13 +150,13 @@ input:focus {
 
 @media only screen and (max-width: 375px){
     .grid .grid-item .item {
-        width: 160px;
+        width: 160px !important;
     }    
 }
 
 @media only screen and (max-width: 320px){
     .grid .grid-item .item {
-        width: 135px;
+        width: 135px !important;
     }    
     #filter button {
         font-size: 10px !important;
