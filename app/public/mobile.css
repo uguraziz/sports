@@ -19,10 +19,11 @@
 
 #special-price .grid .grid-item {
     display: inline;
+    margin-left: 1rem;
 }
- 
-#special-price .grid .grid-item .item {
-    width: 150px !important;
+
+.grid .grid-item .item {
+    width: 158px;
 }
 
 #top-sale .owl-carousel .owl-nav button.owl-next span {
