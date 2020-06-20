@@ -10,20 +10,13 @@
     font-size: 12px;
 }
 
-#special-price .grid {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    display: inline;
-}
-
 #special-price .grid .grid-item {
     display: inline;
     margin-left: 1rem;
 }
 
 .grid .grid-item .item {
-    width: 158px;
+    width: 178px;
 }
 
 #top-sale .owl-carousel .owl-nav button.owl-next span {
