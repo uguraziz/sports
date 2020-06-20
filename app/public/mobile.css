@@ -1,0 +1,34 @@
+#shopping {
+    display: none;
+}
+
+.images .navbar-brand img {
+    width: 170px;
+}
+
+#filter button {
+    font-size: 12px;
+}
+
+#special-price .grid {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    display: inline;
+}
+
+#special-price .grid .grid-item {
+    display: inline;
+}
+ 
+#special-price .grid .grid-item .item {
+    width: 150px !important;
+}
+
+#top-sale .owl-carousel .owl-nav button.owl-next span {
+    margin-right: 0;
+}
+
+#top-sale .owl-carousel .owl-nav button.owl-prev span {
+    margin-left: 0;
+}
