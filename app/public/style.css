@@ -5,6 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: #F8F9FA;
+}
 
 .font-baloo {
     font-family: "Baloo Thambi 2", cursive;
@@ -224,4 +227,8 @@ input:focus {
 
 .owl-theme .owl-nav [class*=owl-]:hover {
     background: none;
+}
+
+#header {
+    background-color: #F8F9FA !important;
 }
