@@ -69,7 +69,7 @@ input:focus {
 }
 
 .grid .grid-item .item {
-    height: 372px;
+    height: 320px;
     overflow: hidden;
     width: 178px;
 }
@@ -148,17 +148,79 @@ input:focus {
     font-size: 20px;
 }
 
-@media only screen and (max-width: 375px){
-    .grid .grid-item .item {
-        width: 160px !important;
-    }    
+#searc::placeholder{
+    font-size: 14px;
 }
 
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 375px) {
+    .grid .grid-item .item {
+        width: 160px !important;
+    }
+    #searc::placeholder{
+        font-size: 9px !important;
+    }
+    #button-addon1 {
+        font-size: 12px !important;
+        padding: 0 1px 0 5px !important;
+    }
+    #searc{
+        padding: 0 !important;
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
     .grid .grid-item .item {
         width: 135px !important;
-    }    
+    }
+
     #filter button {
         font-size: 10px !important;
     }
+    #searc::placeholder{
+        font-size: 11px !important;
+    }
+    #button-addon1 {
+        font-size: 12px !important;
+        padding: 0 1px 0 5px !important;
+    }
+    #searc{
+        padding: 0 1px 0 5px !important;
+        font-size: 12px !important;
+    }
+    #head {
+        flex-direction: column !important;
+    }
+}
+
+.grid .grid-item>a {
+
+    color: inherit;
+    text-decoration: inherit;
+
+}
+
+.price-old {
+    text-decoration: line-through;
+}
+
+.indirim {
+    background: red;
+    padding: 0.20rem 0.5rem;
+    color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.in {
+    padding: 0 .25rem !important;
+    border: 2px solid;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: none;
 }
