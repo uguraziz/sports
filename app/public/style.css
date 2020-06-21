@@ -72,7 +72,7 @@ input:focus {
     height: 320px;
     overflow: hidden;
     width: 178px;
-    background: #fff
+    background: #fff;
 }
 
 .grid .grid-item .text-center h6 {
