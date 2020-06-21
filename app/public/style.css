@@ -232,3 +232,10 @@ input:focus {
 #header {
     background-color: #F8F9FA !important;
 }
+
+#menu-button::before {
+    box-sizing: unset !important;
+}
+#menu-button::after {
+    box-sizing: unset !important;
+}
