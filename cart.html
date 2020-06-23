@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORT</title>
+
+    <link rel="stylesheet" href=".\app\public\layouts.min13.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- !Bootstrap -->
+
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <!-- !Font-awesome -->
+
+    <link rel="stylesheet" href=".\app\public\style.css">
+    <link rel="stylesheet" media="(max-width:768px)" href=".\app\public\mobile.css">
+
+
+
+</head>
+
+<body>
+
+    <header id="header">
+
+        <div class="strip bg-warning container">
+            <div class="d-flex justify-content-between align-items-center py-1">
+                <div class="phones d-flex align-items-center font-rubik font-size-14 text-black-50">
+                    <div class="phonee1">
+                        <i class="fas fa-phone-alt"></i>05455459589
+                    </div>
+                    <div class="phonee2">
+                        <span class="px-2">/</span>
+                        <i class="fas fa-phone-alt"></i>05453676576
+                    </div>
+                </div>
+                <div class="">
+                    <form action="#" class="font-size-14 font-rale">
+                        <a href="cart" class="py-2 rounded-pill">
+                            <span style="padding-right: 0 !important;" class="font-size-16 px-2 text-white"><img style="opacity: .7;" src=".\app\public\images\3.png" alt=""></span>
+                            <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <section class="">
+            <div class="container">
+                <div id="head" class="d-flex justify-content-around align-items-center py-1">
+                    <div class="images ">
+                        <a class="navbar-brand" href="index"><img src=".\app\public\images\logo.png" width="220" alt=""></a>
+                    </div>
+                    <div class="">
+                        <form style="padding: 0;" action="" class="">
+                            <div class="in  rounded rounded-pill shadow-sm border-warning">
+                                <div class="input-group px-2">
+                                    <input id="searc" type="search" placeholder="Aradığınız Ürünü Yazınız.." aria-describedby="button-addon1" class="form-control border-0 ">
+                                    <div class="input-group-append">
+                                        <button id="button-addon1" type="submit" class="btn btn-link text-dark"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <div id="shopping" class="shopping-card mx-3">
+                <form action="#" class="">
+                    <a href="" class="p-2 rounded-pill bg-warning d-flex align-items-center">
+                        <span style="font-size: 20px;" class="px-2 text-dark"><i class="fas fa-shopping-cart"></i></span>
+                        <span style="font-size: 18px;" class="px-3 py-2 rounded-pill text-light bg-dark">0</span>
+                    </a>
+                </form>
+                </div> -->
+
+        <!-- <nav id="nav" class="container">
+    <div id='cssmenu'>
+        <ul>
+            <li><a href="#">Protein Tozu </strong></a>
+                <ul>
+                    <li><a href="#">Whey Protein</a></li>
+                    <li><a href="#">Kazein (Süt Proteini)</a></li>
+                    <li><a href="#">İzole Protein</a></li>
+                    <li><a href="#">Kompleks Protein</a></li>
+                    <li><a href="#">Protein Bar &amp; Hazır İçecek</a></li>
+                    <li><a href="">Tüm Protein Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Kilo ve Hacim </strong></a>
+                <ul>
+                    <li><a href="#">Kilo (Gainer)</a></li>
+                    <li><a href="#">Hacim (Builder)</a></li>
+                    <li><a href="#">Enerji</a></li>
+                    <li><a href="#">Tüm Kilo ve Hacim Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Amino Asit </strong></a>
+                <ul>
+                    <li><a href="#">BCAA (Çift Zincir Amino Asitler)</a></li>
+                    <li><a href="#">Antrenman Öncesi (Pre-Workout)</a></li>
+                    <li><a href="#">L-Arjinin</a></li>
+                    <li><a href="#">L-Glutamin</a></li>
+                    <li><a href="#">Kompleks Amino Asit</a></li>
+                    <li><a href="#">Likit Amino Asit</a></li>
+                    <li><a href="#">Tüm Amino Asit Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Karnitin ve CLA </strong></a>
+                <ul>
+                    <li><a href="#">L-Karnitin &amp; Hazır İçecek</a></li>
+                    <li><a href="#">CLA</a></li>
+                    <li><a href="#">Termojenik</a></li>
+                    <li><a href="#">Tatlandırıcı</a></li>
+                    <li><a href="#">Tüm Diyet ve Karnitin Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Güç ve Performans </strong></a>
+                <ul>
+                    <li><a href="#">Performans ve Güç</a></li>
+                    <li><a href="#">Enerji ve Dayanıklılık</a></li>
+                    <li><a href="#">Tribulus</a></li>
+                    <li><a href="#">Beta Alanin</a></li>
+                    <li><a href="#">Tüm Güç ve Performans Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Vitaminler </strong></a>
+                <ul>
+                    <li><a href="#">Vitamin &amp; Mineral Destekleri</a></li>
+                    <li><a href="#">Eklem Sağlığı (Glukozamin)</a></li>
+                    <li><a href="#">Balık Yağı</a></li>
+                    <li><a href="#">Tüm Vitamin ve Eklem Sağlığı Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Kreatin </strong></a>
+                <ul>
+                    <li><a href="#">Kreatin</a></li>
+                    <li><a href="#">Performans &amp; Dayanıklılık</a></li>
+                    <li><a href="#">Tüm Kreatin Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sağlıklı Atıştırmalıklar </strong></a>
+                <ul>
+                    <li><a href="#">Protein Bar</a></li>
+                    <li><a href="#">Fıstık Ezmesi</a></li>
+                    <li><a href="#">Müsli, Yulaf ve Gevrekler</a></li>
+                    <li><a href="#">Hazır İçecekler</a></li>
+                    <li><a href="#">Tüm Sağlıklı Atıştırmalık Ürünleri</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Shop</strong></a>
+                <ul>
+                    <li><a href="#">Antrenman Eldivenleri</a></li>
+                    <li><a href="#">Antrenman Destek Ürünleri</a></li>
+                    <li><a href="#">Erkek Fitness Giyim</a></li>
+                    <li><a href="#">Kadın Fitness Giyim</a></li>
+                    <li><a href="#">Shaker</a></li>
+                    <li><a href="#">Pill Box ve Saklama Kabı</a></li>
+                    <li><a href="#">Bileklik ve Dizlik</a></li>
+                    <li><a href="#">Antrenman Kemerleri</a></li>
+                    <li><a href="#">Antrenman Çantası</a></li>
+                    <li><a href="#">Şapka ve Bere</a></li>
+                    <li><a href="#">Spor Aletleri</a></li>
+                    <li><a href="#">Vücut Bakım Ürünleri</a></li>
+                    <li><a href="#">Tüm Aksesuar Ürünleri</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </nav> -->
+        <div style="padding: 0;" class="container">
+            <div style="border-top: 2px solid #FFC107; border-bottom: 2px solid #FFC107;" class="py-2 bg-dark"></div>
+        </div>
+    </header>
+
+    <!-- shopping cart -->
+    <section style="margin-bottom: 13rem;" id="cart" class="py-3">
+        <div class="container w-75">
+            <h5 class="font-baloo font-size-20">Alışveriş Sepeti</h5>
+            <!-- shopping cart items -->
+            <div class="row">
+                <div class="col-sm-9">
+                    <!-- Cart Item -->
+                    <div class="row tot d-flex align-items-center border-top py-3 mt-3">
+                        <div class="col-sm-2">
+                            <img src=".\app\public\images\sale\coksatanlar\1.jpeg" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-sm-8">
+                            <h5 class="font-baloo font-size-20">Weider Premium Whey Protein Tozu 2300gr</h5>
+                            <small>Çikolatalı</small>
+                            <div class="qty d-flex align-items-center pt-2">
+                                <div class="pr-2 font-size-20">Adet:</div>
+                                <div id="a" class="d-flex font-rale">
+                                    <button class="qty-up border bg-light" data-id="pro1"><i class="fas fa-angle-up"></i></button>
+                                    <input type="text" data-id="pro1" class="qty_input border px-2 w-50 bg-light" disabled value="1" placeholder="1">
+                                    <button data-id="pro1" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                </div>
+                                <button type="submit" class="btn btn-danger text-light font-baloo text-danger px-3">Sil</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 text-center">
+                            <div style="font-size: 2rem;" class="font-baloo text-danger">
+                                <span class="product_price" data-price="439.00" data-id="pro1">439.00</span>TL
+                            </div>
+                        </div>
+                    </div>
+                    <!-- !Cart Item -->
+
+                    <!-- Cart Item -->
+                    <div class="row tot d-flex align-items-center border-top py-3 mt-3">
+                        <div class="col-sm-2">
+                            <img src=".\app\public\images\sale\coksatanlar\2.jpeg" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-sm-8">
+                            <h5 class="font-baloo font-size-20">Hardline Progainer 5000 Gr</h5>
+                            <small>Çikolatalı</small>
+                            <div class="qty d-flex align-items-center pt-2">
+                                <div class="pr-2 font-size-20">Adet:</div>
+                                <div id="a" class="d-flex font-rale">
+                                    <button class="qty-up border bg-light" data-id="pro2"><i class="fas fa-angle-up"></i></button>
+                                    <input type="text" data-id="pro2" class="qty_input border px-2 w-50 bg-light" disabled value="1" placeholder="1">
+                                    <button data-id="pro2" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                </div>
+                                <button type="submit" class="btn btn-danger text-light font-baloo text-danger px-3">Sil</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 text-center">
+                            <div style="font-size: 2rem;" class="font-baloo text-danger pr">
+                                <span class="product_price" data-price="259.00" data-id="pro2">259.00</span>TL
+                            </div>
+                        </div>
+                    </div>
+                    <!-- !Cart Item -->
+
+
+
+                </div>
+                <!-- Subtotal -->
+                <div class="col-sm-3">
+                    <div class="sub-total border p-2 text-center mt-2">
+                        <h6 class="text-success"><i class="fa fa-check"></i> Siparişiniz ÜCRETSİZ Teslimat için uygundur.
+                        </h6>
+                        <div class="border-top py-4">
+                            <h5 class="font-baloo font-size-20">Toplam <span id="tot"></span> Fiyat:&nbsp; <span class="text-danger"><span class="text-danger" id="deal-price"></span> TL</span></h5>
+                            <button type="submit" class="btn btn-warning mt-3">Alışverişi Tamamla</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- start #footer -->
+    <footer id="footer" class="bg-dark text-white pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12">
+                    <h4 class="font-rubik font-size-20">Aktif Form Sports</h4>
+                    <p class="font-size-14 font-rale text-white-50">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, deserunt.</p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h4 class="font-rubik font-size-20">Bizi Takip İçin</h4>
+                    <form class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Email *">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary mb-2">Gönder</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h4 class="font-rubik font-size-20">Bilgi</h4>
+                    <div class="d-flex flex-column flex-wrap">
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Delivery Information</a>
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Privacy Policy</a>
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Terms & Conditions</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h4 class="font-rubik font-size-20">Sözleşmeler</h4>
+                    <div class="d-flex flex-column flex-wrap">
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Order History</a>
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Wish List</a>
+                        <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Newslatters</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center bg-dark text-white pt-5">
+            <p class="font-rale font-size-14">&copy; Copyrights 2020. Desing By <a href="#" class="color-second">Aziz Uğur ALTUN</a></p>
+        </div>
+    </footer>
+    <!-- !start #footer -->
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Owl Carousel Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+
+    <!-- İsotope filter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+
+    <script src=".\app\public\main.js"></script>
+
+</body>
+
+</html>
