@@ -97,87 +97,167 @@ $(document).ready(function () {
         }
     });
 
-    
-		$(document).ready(function() {
-		    var slider = $("#slider");
-		    var thumb = $("#thumb");
-		    var slidesPerPage = 4; //globaly define number of elements per page
-		    var syncedSecondary = true;
-		    slider.owlCarousel({
-		        items: 1,
-		        slideSpeed: 2000,
-		        nav: false,
-		        autoplay: false, 
-		        dots: false,
-		        loop: true,
-		        responsiveRefreshRate: 200
-		    }).on('changed.owl.carousel', syncPosition);
-		    thumb
-		        .on('initialized.owl.carousel', function() {
-		            thumb.find(".owl-item").eq(0).addClass("current");
-		        })
-		        .owlCarousel({
-		            items: slidesPerPage,
-		            dots: false,
-		            nav: true,
-		            item: 4,
-		            smartSpeed: 200,
-		            slideSpeed: 500,
-		            slideBy: slidesPerPage, 
-		        	navText: ['<svg width="18px" height="18px" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="25px" height="25px" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
-		            responsiveRefreshRate: 100
-		        }).on('changed.owl.carousel', syncPosition2);
-		    function syncPosition(el) {
-		        var count = el.item.count - 1;
-		        var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-		        if (current < 0) {
-		            current = count;
-		        }
-		        if (current > count) {
-		            current = 0;
-		        }
-		        thumb
-		            .find(".owl-item")
-		            .removeClass("current")
-		            .eq(current)
-		            .addClass("current");
-		        var onscreen = thumb.find('.owl-item.active').length - 1;
-		        var start = thumb.find('.owl-item.active').first().index();
-		        var end = thumb.find('.owl-item.active').last().index();
-		        if (current > end) {
-		            thumb.data('owl.carousel').to(current, 100, true);
-		        }
-		        if (current < start) {
-		            thumb.data('owl.carousel').to(current - onscreen, 100, true);
-		        }
-		    }
-		    function syncPosition2(el) {
-		        if (syncedSecondary) {
-		            var number = el.item.index;
-		            slider.data('owl.carousel').to(number, 100, true);
-		        }
-		    }
-		    thumb.on("click", ".owl-item", function(e) {
-		        e.preventDefault();
-		        var number = $(this).index();
-		        slider.data('owl.carousel').to(number, 300, true);
-		    });
+
+    $(document).ready(function () {
+        var slider = $("#slider");
+        var thumb = $("#thumb");
+        var slidesPerPage = 4; //globaly define number of elements per page
+        var syncedSecondary = true;
+        slider.owlCarousel({
+            items: 1,
+            slideSpeed: 2000,
+            nav: false,
+            autoplay: false,
+            dots: false,
+            loop: true,
+            responsiveRefreshRate: 200
+        }).on('changed.owl.carousel', syncPosition);
+        thumb
+            .on('initialized.owl.carousel', function () {
+                thumb.find(".owl-item").eq(0).addClass("current");
+            })
+            .owlCarousel({
+                items: slidesPerPage,
+                dots: false,
+                nav: true,
+                item: 4,
+                smartSpeed: 200,
+                slideSpeed: 500,
+                slideBy: slidesPerPage,
+                navText: ['<svg width="18px" height="18px" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="25px" height="25px" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+                responsiveRefreshRate: 100
+            }).on('changed.owl.carousel', syncPosition2);
+
+        function syncPosition(el) {
+            var count = el.item.count - 1;
+            var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+            if (current < 0) {
+                current = count;
+            }
+            if (current > count) {
+                current = 0;
+            }
+            thumb
+                .find(".owl-item")
+                .removeClass("current")
+                .eq(current)
+                .addClass("current");
+            var onscreen = thumb.find('.owl-item.active').length - 1;
+            var start = thumb.find('.owl-item.active').first().index();
+            var end = thumb.find('.owl-item.active').last().index();
+            if (current > end) {
+                thumb.data('owl.carousel').to(current, 100, true);
+            }
+            if (current < start) {
+                thumb.data('owl.carousel').to(current - onscreen, 100, true);
+            }
+        }
+
+        function syncPosition2(el) {
+            if (syncedSecondary) {
+                var number = el.item.index;
+                slider.data('owl.carousel').to(number, 100, true);
+            }
+        }
+        thumb.on("click", ".owl-item", function (e) {
+            e.preventDefault();
+            var number = $(this).index();
+            slider.data('owl.carousel').to(number, 300, true);
+        });
 
 
-            $(".qtyminus").on("click",function(){
-                var now = $(".qty").val();
-                if ($.isNumeric(now)){
-                    if (parseInt(now) -1> 0)
-                    { now--;}
-                    $(".qty").val(now);
-                }
-            })            
-            $(".qtyplus").on("click",function(){
-                var now = $(".qty").val();
-                if ($.isNumeric(now)){
-                    $(".qty").val(parseInt(now)+1);
-                }
+        $(document).ready(function () {
+            $('.product_price').each(function () {
+                calculateSum();
             });
-		});
+        });
+
+        function calculateSum() {
+
+            let sum = 0;
+            // iterate through each td based on class and add the values
+            $(".product_price").each(function () {
+
+                let value = $(this).text();
+                
+                // add only if the value is number
+                if (!isNaN(value) && value.length != 0) {
+                    sum += parseInt(value);
+                }
+                
+            });
+            
+            $('#deal-price').text(sum.toFixed(2));
+        };
+
+        // let tott = document.querySelector("#tot");
+        // let tot = document.querySelectorAll(".tot");
+        // tott.innerHTML = tot.length;
+        
+
+
+        let $qty_up = $(".qty-up");
+        let $qty_down = $(".qty-down");
+        let $deal_price = $("#deal-price");
+        // let $input = $(".qty_input");
+
+        /* click on qty up button */
+        $qty_up.click(function (e) {
+            let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
+            let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
+
+            if ($input.val() >= 1 && $input.val() <= 9) {
+                $input.val(function (i, oldval) {
+                    return ++oldval;
+                });
+            }else{
+                return false;
+            }
+
+            let item_price = $price.data("price");
+
+           
+            // increase price of the product
+            $price.text(parseInt(item_price * $input.val()).toFixed(2));
+
+            // set subtotal price
+            let subtotal = parseInt($deal_price.text()) + parseInt(item_price);
+            $deal_price.text(subtotal.toFixed(2));
+
+        });
+
+
+        /* click on qty down button */
+        $qty_down.click(function (e) {
+            let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
+            let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
+            if ($input.val() > 1 && $input.val() < 10) {
+                $input.val(function (i, oldval) {
+                    return --oldval;
+                });
+            }else{
+                return false;
+            }
+
+            let item_price = $price.data("price");
+
+            // increase price of the product
+            $price.text(parseInt(item_price * $input.val()).toFixed(2));
+
+            // set subtotal price
+            let subtotal = parseInt($deal_price.text()) - parseInt(item_price);
+            $deal_price.text(subtotal.toFixed(2));
+        });
+    });
+
+    let cart = document.querySelector("#cart");
+
+    cart.addEventListener("click", newCart);
+    function newCart(e){
+        if(e.target.textContent == "Sil"){
+            e.target.parentElement.parentElement.parentElement.remove();
+        }
+        
+    }
 
 });
