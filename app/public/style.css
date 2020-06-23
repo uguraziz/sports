@@ -94,7 +94,7 @@ input:focus {
 
 
 #special-price .grid .grid-item {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-left: 0.5rem;
 }
 
@@ -208,8 +208,13 @@ input:focus {
     #head {
         flex-direction: column !important;
     }
+
     #map .container ul {
         font-size: 9px !important;
+    }
+
+    .phones {
+        font-size: 10px !important;
     }
 }
 
@@ -277,9 +282,6 @@ input:focus {
     text-decoration: underline;
     font-weight: 700;
 }
-
-
-
 
 /*Product Detail Page Style*/
 .product-detail {
@@ -622,7 +624,7 @@ input:focus {
     color: #fff;
     padding: 7px 45px;
     display: inline-block;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     border: solid 1px #212529;
     transition: all 0.5s ease-in-out 0s;
     font-size: 18px;
@@ -730,4 +732,16 @@ input:focus {
     width: 100%;
     max-width: 450px;
     height: auto;
+}
+
+#header form a {
+    text-decoration: inherit;
+}
+
+#a button {
+    padding: 1px 6px;
+}
+
+.icons span {
+    font-size: 14px;
 }
