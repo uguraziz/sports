@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORT</title>
+
+    <link rel="stylesheet" href=".\app\public\layouts.min13.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- !Bootstrap -->
+
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <!-- !Font-awesome -->
+
+    <link rel="stylesheet" href=".\app\public\style.css">
+    <link rel="stylesheet" media="(max-width:768px)" href=".\app\public\mobile.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <section class="">
+                <div class="container">
+                    <div id="head" class="d-flex justify-content-around align-items-center py-1">
+                        <div class="images ">
+                            <a class="navbar-brand" href="index"><img src=".\app\public\images\logo.png" width="250" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <content class="clearfix border-rad">
+            <div class="cart-order">
+                <div class="head">
+                    <div class="tabmenu">
+                        <ul>
+                            <li style="list-style: none;"><a style="display: block; font-size: 18px; text-decoration: none;" class="active" href="#">Adres Ve Kargo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="adress">
+                    <div class="top">
+                        <h1>Adres Ekle</h1>
+                        <h1 class="d-flex justify-content-center align-items-center" style="min-height:50px; line-height:20px; margin-bottom:10px; background-color:#E7FFE5;">
+                            <p style="margin-bottom: 0;">Teslimat adresiniz için lütfen aşağıdaki formu doldurun.</p>
+                        </h1>
+                    </div>
+                    <form action="">
+                        <span class="text-black-50">Adres Tanımı:</span>
+                        <label>
+                            <input type="text" placeholder="Örn: Ev, İşyeri, Ofis">
+                        </label>
+                        <span>
+                            Ad:
+                            <i style="cursor:help" title="Bu Bilgi Gereklidir!">(*)</i>
+                        </span>
+                        <label>
+                            <input type="text" placeholder="Ad" name="ad">
+                        </label>
+                        <span>
+                            Soyad:
+                            <i style="cursor:help" title="Bu Bilgi Gereklidir!">(*)</i>
+                        </span>
+                        <label>
+                            <input type="text" placeholder="Soyad" name="soyad">
+                        </label>
+                        <span>
+                            Adres:
+                            <i style="cursor:help" title="Bu Bilgi Gereklidir!">(*)</i>
+                        </span>
+                        <label>
+                            <input type="text" placeholder="Adres" name="adres">
+                        </label>
+                        <div class="col-1">
+                            <select name="sehir">
+                                <optgroup style="border:1px color #ff0000">
+                                    <option value="">Şehir</option>
+                                    <option value="1">ADANA</option>
+                                    <option value="2">ADIYAMAN</option>
+                                    <option value="3">AFYON</option>
+                                    <option value="4">AĞRI</option>
+                                    <option value="5">AMASYA</option>
+                                    <option value="6">ANKARA</option>
+                                    <option value="7">ANTALYA</option>
+                                    <option value="8">ARTVİN</option>
+                                    <option value="9">AYDIN</option>
+                                    <option value="10">BALIKESİR</option>
+                                    <option value="11">BİLECİK</option>
+                                    <option value="12">BİNGÖL</option>
+                                    <option value="13">BİTLİS</option>
+                                    <option value="14">BOLU</option>
+                                    <option value="15">BURDUR</option>
+                                    <option value="16">BURSA</option>
+                                    <option value="17">ÇANAKKALE</option>
+                                    <option value="18">ÇANKIRI</option>
+                                    <option value="19">ÇORUM</option>
+                                    <option value="20">DENİZLİ</option>
+                                    <option value="21">DİYARBAKIR</option>
+                                    <option value="22">EDİRNE</option>
+                                    <option value="23">ELAZIĞ</option>
+                                    <option value="24">ERZİNCAN</option>
+                                    <option value="25">ERZURUM</option>
+                                    <option value="26">ESKİŞEHİR</option>
+                                    <option value="27">GAZİANTEP</option>
+                                    <option value="28">GİRESUN</option>
+                                    <option value="29">GÜMÜŞHANE</option>
+                                    <option value="30">HAKKARİ</option>
+                                    <option value="31">HATAY</option>
+                                    <option value="32">ISPARTA</option>
+                                    <option value="33">İÇEL</option>
+                                    <option value="34">İSTANBUL</option>
+                                    <option value="35">İZMİR</option>
+                                    <option value="36">KARS</option>
+                                    <option value="37">KASTAMONU</option>
+                                    <option value="38">KAYSERİ</option>
+                                    <option value="39">KIRKLARELİ</option>
+                                    <option value="40">KIRŞEHİR</option>
+                                    <option value="41">KOCAELİ</option>
+                                    <option value="42">KONYA</option>
+                                    <option value="43">KÜTAHYA</option>
+                                    <option value="44">MALATYA</option>
+                                    <option value="45">MANİSA</option>
+                                    <option value="46">KAHRAMANMARAŞ</option>
+                                    <option value="47">MARDİN</option>
+                                    <option value="48">MUĞLA</option>
+                                    <option value="49">MUŞ</option>
+                                    <option value="50">NEVŞEHİR</option>
+                                    <option value="51">NİĞDE</option>
+                                    <option value="52">ORDU</option>
+                                    <option value="53">RİZE</option>
+                                    <option value="54">SAKARYA</option>
+                                    <option value="55">SAMSUN</option>
+                                    <option value="56">SİİRT</option>
+                                    <option value="57">SİNOP</option>
+                                    <option value="58">SİVAS</option>
+                                    <option value="59">TEKİRDAĞ</option>
+                                    <option value="60">TOKAT</option>
+                                    <option value="61">TRABZON</option>
+                                    <option value="62">TUNCELİ</option>
+                                    <option value="63">ŞANLIURFA</option>
+                                    <option value="64">UŞAK</option>
+                                    <option value="65">VAN</option>
+                                    <option value="66">YOZGAT</option>
+                                    <option value="67">ZONGULDAK</option>
+                                    <option value="68">AKSARAY</option>
+                                    <option value="69">BAYBURT</option>
+                                    <option value="70">KARAMAN</option>
+                                    <option value="71">KIRIKKALE</option>
+                                    <option value="72">BATMAN</option>
+                                    <option value="73">ŞIRNAK</option>
+                                    <option value="74">BARTIN</option>
+                                    <option value="75">ARDAHAN</option>
+                                    <option value="76">IĞDIR</option>
+                                    <option value="77">YALOVA</option>
+                                    <option value="78">KARABÜK</option>
+                                    <option value="79">KİLİS</option>
+                                    <option value="80">OSMANİYE</option>
+                                    <option value="81">DÜZCE</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-1">
+                            <label>
+                                <input type="text" placeholder="İlçe" name="ilce">
+                            </label>
+                        </div>
+                        <div class="col-1">
+                            <label>
+                                <input type="text" placeholder="Telefon" name="evtel">
+                            </label>
+                        </div>
+                        <div class="col-1">
+                            <label>
+                                <input type="text" placeholder="Cep Telefonu *" name="ceptel">
+                            </label>
+                        </div>
+                        <span>
+                            Tc Kimlik No (İsteğe Bağlıdır):
+                        </span>
+                        <label>
+                            <input type="text" placeholder="TC Kimlik No" name="tc">
+                        </label>
+                        <div class="bottom">
+                            <a href="payment" class="button">Devam Et</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </content>
+    </div>
+
+
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Owl Carousel Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+
+    <!-- İsotope filter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

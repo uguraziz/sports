@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORT</title>
+
+    <link rel="stylesheet" href=".\app\public\layouts.min13.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- !Bootstrap -->
+
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <!-- !Font-awesome -->
+
+    <link rel="stylesheet" href=".\app\public\style.css">
+    <link rel="stylesheet" media="(max-width:768px)" href=".\app\public\mobile.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <section class="">
+                <div class="container">
+                    <div id="head" class="d-flex justify-content-around align-items-center py-1">
+                        <div class="images ">
+                            <a class="navbar-brand" href="index"><img src=".\app\public\images\logo.png" width="250" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <content class="clearfix border-rad">
+            <div class="container">
+                <div class="cart-order">
+                    <div class="head">
+                        <div class="tabmenu">
+                            <ul>
+                                <li style="list-style: none;"><a style="display: block; font-size: 18px; text-decoration: none;" href="#">Ödeme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="payment">
+                        <div style="display: block;" class="row">
+                            <div class="col-xs-12 ">
+                                <nav>
+                                    <div style="flex-wrap: inherit;" class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Kredi Kartı</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Havale</a>
+                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Kapıda Ödeme</a>
+                                    </div>
+                                </nav>
+                                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                                        <!-- payment card -->
+
+                                        <div class="wrapper" id="app">
+                                            <div class="card-form">
+                                                <div class="card-list">
+                                                    <div class="card-item" v-bind:class="{ '-active' : isCardFlipped }">
+                                                        <div class="card-item__side -front">
+                                                            <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
+                                                            <div class="card-item__cover">
+                                                                <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+                                                            </div>
+
+                                                            <div class="card-item__wrapper">
+                                                                <div class="card-item__top">
+                                                                </div>
+                                                                <label for="cardNumber" class="card-item__number" ref="cardNumber">
+                                                                    <template v-if="getCardType === 'amex'">
+                                                                        <span v-for="(n, $index) in amexCardMask" :key="$index">
+                                                                            <transition name="slide-fade-up">
+                                                                                <div class="card-item__numberItem" v-if="$index > 4 && $index < 14 && cardNumber.length > $index && n.trim() !== ''">*</div>
+                                                                                <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" :key="$index" v-else-if="cardNumber.length > $index">
+                                                                                    {{cardNumber[$index]}}
+                                                                                </div>
+                                                                                <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" v-else :key="$index + 1">{{n}}</div>
+                                                                            </transition>
+                                                                        </span>
+                                                                    </template>
+
+                                                                    <template v-else>
+                                                                        <span v-for="(n, $index) in otherCardMask" :key="$index">
+                                                                            <transition name="slide-fade-up">
+                                                                                <div class="card-item__numberItem" v-if="$index > 4 && $index < 15 && cardNumber.length > $index && n.trim() !== ''">*</div>
+                                                                                <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" :key="$index" v-else-if="cardNumber.length > $index">
+                                                                                    {{cardNumber[$index]}}
+                                                                                </div>
+                                                                                <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" v-else :key="$index + 1">{{n}}</div>
+                                                                            </transition>
+                                                                        </span>
+                                                                    </template>
+                                                                </label>
+                                                                <div class="card-item__content">
+                                                                    <label for="cardName" class="card-item__info" ref="cardName">
+                                                                        <div class="card-item__holder">Kart Sahibi</div>
+                                                                        <transition name="slide-fade-up">
+                                                                            <div class="card-item__name" v-if="cardName.length" key="1">
+                                                                                <transition-group name="slide-fade-right">
+                                                                                    <span class="card-item__nameItem" v-for="(n, $index) in cardName.replace(/\s\s+/g, ' ')" v-if="$index === $index" v-bind:key="$index + 1">{{n}}</span>
+                                                                                </transition-group>
+                                                                            </div>
+                                                                            <div class="card-item__name" v-else key="2">Ad Soyad</div>
+                                                                        </transition>
+                                                                    </label>
+                                                                    <div class="card-item__date" ref="cardDate">
+                                                                        <label for="cardMonth" class="card-item__dateTitle">SÜRESİ</label>
+                                                                        <label for="cardMonth" class="card-item__dateItem">
+                                                                            <transition name="slide-fade-up">
+                                                                                <span v-if="cardMonth" v-bind:key="cardMonth">{{cardMonth}}</span>
+                                                                                <span v-else key="2">AY</span>
+                                                                            </transition>
+                                                                        </label>
+                                                                        /
+                                                                        <label for="cardYear" class="card-item__dateItem">
+                                                                            <transition name="slide-fade-up">
+                                                                                <span v-if="cardYear" v-bind:key="cardYear">{{String(cardYear).slice(2,4)}}</span>
+                                                                                <span v-else key="2">YIL</span>
+                                                                            </transition>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-item__side -back">
+                                                            <div class="card-item__cover">
+                                                                <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+                                                            </div>
+                                                            <div class="card-item__band"></div>
+                                                            <div class="card-item__cvv">
+                                                                <div class="card-item__cvvTitle">CVC</div>
+                                                                <div class="card-item__cvvBand">
+                                                                    <span v-for="(n, $index) in cardCvv" :key="$index">
+                                                                        *
+                                                                    </span>
+
+                                                                </div>
+                                                                <div class="card-item__type">
+                                                                    <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-form__inner">
+                                                    <div class="card-input">
+                                                        <label for="cardNumber" class="card-input__label">Kart Numasarı</label>
+                                                        <input type="text" id="cardNumber" class="card-input__input" v-mask="generateCardNumberMask" v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber" autocomplete="off">
+                                                    </div>
+                                                    <div class="card-input">
+                                                        <label for="cardName" class="card-input__label">Kart Sahibi</label>
+                                                        <input type="text" id="cardName" class="card-input__input" v-model="cardName" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardName" autocomplete="off">
+                                                    </div>
+                                                    <div class="card-form__row">
+                                                        <div class="card-form__col">
+                                                            <div class="card-form__group">
+                                                                <label for="cardMonth" class="card-input__label">Son Kullanma Tarihi</label>
+                                                                <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+                                                                    <option value="" disabled selected>AY</option>
+                                                                    <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth" v-bind:key="n">
+                                                                        {{n < 10 ? '0' + n : n}}
+                                                                    </option>
+                                                                </select>
+                                                                <select class="card-input__input -select" id="cardYear" v-model="cardYear" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+                                                                    <option value="" disabled selected>Yıl</option>
+                                                                    <option v-bind:value="$index + minCardYear" v-for="(n, $index) in 12" v-bind:key="n">
+                                                                        {{$index + minCardYear}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-form__col -cvv">
+                                                            <div class="card-input">
+                                                                <label for="cardCvv" class="card-input__label">Güvenlik Kodu</label>
+                                                                <input type="text" class="card-input__input" id="cardCvv" v-mask="'####'" maxlength="4" v-model="cardCvv" v-on:focus="flipCard(true)" v-on:blur="flipCard(false)" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <button class="card-form__button">
+                                                        GÖNDER
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- !payment card -->
+
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <div class="transfer">
+                                            <div class="py-3">
+                                                <span class="font-size-20 text-black-50"><strong>Havale/EFT</strong> Yapılacak Banka</span>
+                                            </div>
+                                            <div class="column">
+                                                <div style="width: 100%;" class="col">
+                                                    <div class="garanti" style="border: 1px solid rgb(242, 242, 242);">
+                                                        <img style="margin-bottom: 1rem;" width="100" height="30" src=".\app\public\images\garanti.png" alt="">
+                                                        <br>
+                                                        <span style="font-size: 20px margin-top:20px;">
+                                                            <strong>Garanti Bankası:</strong> - Gaziemir Meydan
+                                                            <br>
+                                                            <strong>Şube Kodu:</strong> - 9999
+                                                            <br>
+                                                            <strong>Hesap No:</strong> - 9999999
+                                                            <br>
+                                                            <strong>IBAN No:</strong> - TR99 9999 9999 9999 9999 9999 99
+                                                            <br>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="py-3">
+                                                    <span class="font-size-18 text-black-50"><strong>Havale/EFT</strong> Yaparken Dikkat Edilmesi Gerekenler:</span>
+                                                    <p class="text-black-50">Siparişinizi gönderebilmemiz için <strong>7 gün</strong> içerisinde havale yapmanız gereklidir.</p>
+                                                </div>
+                                                <div class="row ">
+                                                    <div class="col-lg-6"></div>
+                                                    <div class="col-lg-2"></div>
+                                                    <div style="text-align: center;" class="col-lg-4">
+                                                        <span style="font-size: 17px;" class="text-black-50"><b>Sipariş Tutarı</b></span>
+                                                        <br>
+                                                        <span style="text-align:center; color:#ffa200; font: 700 20px/20px 'Avenir Next LT Pro', sans-serif;">439.00 TL</span>
+                                                        <button class="card-form__button">
+                                                            Alışverişi Tamamla
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                        <div class="transfer py-3 text-black-50 font-size-18">
+                                            <strong style="font-size: 20px;">Kapıda ödeme siparişi ile ilgili önemli bilgiler :</strong>
+                                            <br>
+                                            <br>
+                                            Teslimatlarımız şirket araçlarımız veya kargo firması aracılığıyla yapılmaktadır.
+                                            <br>
+                                            <br>
+                                            "Kapıda Ödeme Hizmeti" Nakit veya Kredi kartı tek çekim ödemelerinde geçerlidir.
+                                            Kapıda Ödeme sistemi içersinde taksitli ödeme seçeneği bulunmamaktadır.
+                                            <br>
+                                            <br>
+                                            Kapıda ödeme seçeneği ile verilmiş olan siparişlerde, gönderi öncesi müşterilerimizden gerekli görüldüğünde telefon ile teyid alınmaktadır. Bilgilerinizin eksik olması ve size ulaşılamaması durumunda siparişiniz işleme alınmayabilir. Siparişiniz ile alakalı tüm durumlarda lütfen destek hattımızdan bizimle iletişime geçiniz.
+                                        </div>
+                                        <div class="row my-4">
+                                            <div class="col-lg-6"></div>
+                                            <div class="col-lg-2"></div>
+                                            <div style="text-align: center;" class="col-lg-4">
+                                                <span style="font-size: 17px;" class="text-black-50"><b>Sipariş Tutarı</b></span>
+                                                <br>
+                                                <span style="text-align:center; color:#ffa200; font: 700 20px/20px 'Avenir Next LT Pro', sans-serif;">445.00 TL</span>
+                                                <button class="card-form__button">
+                                                    Alışverişi Tamamla
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </content>
+    </div>
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Owl Carousel Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+
+    <!-- İsotope filter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+
+    <!-- payment card  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js"></script>
+    <script src=".\app\public\payment.js"></script>
+</body>
+
+</html>
