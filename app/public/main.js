@@ -166,35 +166,6 @@ $(document).ready(function () {
         });
 
 
-        $(document).ready(function () {
-            $('.product_price').each(function () {
-                calculateSum();
-            });
-        });
-
-        function calculateSum() {
-
-            let sum = 0;
-            // iterate through each td based on class and add the values
-            $(".product_price").each(function () {
-
-                let value = $(this).text();
-                
-                // add only if the value is number
-                if (!isNaN(value) && value.length != 0) {
-                    sum += parseInt(value);
-                }
-                
-            });
-            
-            $('#deal-price').text(sum.toFixed(2));
-        };
-
-        // let tott = document.querySelector("#tot");
-        // let tot = document.querySelectorAll(".tot");
-        // tott.innerHTML = tot.length;
-        
-
 
         let $qty_up = $(".qty-up");
         let $qty_down = $(".qty-down");
@@ -210,13 +181,13 @@ $(document).ready(function () {
                 $input.val(function (i, oldval) {
                     return ++oldval;
                 });
-            }else{
+            } else {
                 return false;
             }
 
             let item_price = $price.data("price");
 
-           
+
             // increase price of the product
             $price.text(parseInt(item_price * $input.val()).toFixed(2));
 
@@ -235,7 +206,7 @@ $(document).ready(function () {
                 $input.val(function (i, oldval) {
                     return --oldval;
                 });
-            }else{
+            } else {
                 return false;
             }
 
@@ -250,14 +221,32 @@ $(document).ready(function () {
         });
     });
 
-    let cart = document.querySelector("#cart");
 
-    cart.addEventListener("click", newCart);
-    function newCart(e){
-        if(e.target.textContent == "Sil"){
-            e.target.parentElement.parentElement.parentElement.remove();
+    let sum = 0;
+    $(".product_price").each(function () {
+        let value = $(this).text();
+        if (!isNaN(value) && value.length != 0) {
+            sum += parseInt(value);
         }
-        
-    }
+    });
 
+    $('#deal-price').text(sum.toFixed(2));
+
+
+    let cart = document.querySelector("#cart");
+    cart.addEventListener("click", newCart);
+
+    function newCart(e) {
+        if (e.target.textContent == "Sil") {
+            e.target.parentElement.parentElement.parentElement.remove();
+            let sum = 0;
+            $(".product_price").each(function () {
+                let value = $(this).text();
+                if (!isNaN(value) && value.length != 0) {
+                    sum += parseInt(value);
+                }
+            });
+            $('#deal-price').text(sum.toFixed(2));
+        }
+    }
 });
