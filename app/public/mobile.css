@@ -48,3 +48,12 @@
 .icons span {
     font-size: 12px;
 }
+
+nav>div a.nav-item.nav-link,
+nav>div a.nav-item.nav-link.active {
+    font-size: 12px;
+}
+
+.card-form__button {
+    font-size: 14px;
+}
