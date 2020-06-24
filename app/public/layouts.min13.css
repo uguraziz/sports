@@ -1902,7 +1902,7 @@ content .textbottom ul li a:hover {
 
 header,
 header .main {
-    background: #f5f6f7;
+    background: #F8F9FA
     display: block;
     position: relative
 }
@@ -4794,7 +4794,7 @@ footer .main-footer nav ul li a:hover {
 
 .cart-order .transfer .column .col div {
     width: 100%;
-    padding: 20px 0 20px 50px;
+    padding: 20px 0 20px 20px;
     box-sizing: border-box;
     border: 1px solid #f3f3f3;
     background: #fdfdfd;
@@ -5415,8 +5415,7 @@ form {
     border-radius: 50px;
     background-clip: padding-box;
     transition: all .5s;
-    float: right;
-    font: 700 14px/45px "Avenir Next LT Pro", sans-serif
+    float: left;
 }
 
 @media(max-width:768px) {
@@ -5441,7 +5440,12 @@ form span {
 
 form .col-1 {
     width: 50%;
-    display: flex
+    display: flex;
+    flex: auto;
+    max-width: auto;
+    max-width: inherit;
+    padding: 0;
+    float: left;
 }
 
 form label,
