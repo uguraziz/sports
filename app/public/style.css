@@ -1442,3 +1442,7 @@ body {
 	transform: translateX(-10px) rotate(45deg);
 	pointer-events: none;
 }
+
+.card {
+	background: none;
+}
